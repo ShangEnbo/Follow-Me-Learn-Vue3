@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div class="attribute-inter">
+      <div v-bind:id="dynamicId"></div>
+      <div v-bind:id="dynamicId1"></div>
+      <div v-bind:id="dynamicId2"></div>
+      <button v-bind:disabled="isButtonDisabled1">按钮</button>
+      <button v-bind:disabled="isButtonDisabled2">按钮</button>
+    </div>
+
+    <script>
+      const inter = {
+        data() {
+          return {
+            dynamicId: 'id',
+            dynamicId1: null,
+            dynamicId2: undefined,
+            isButtonDisabled1: true,
+            isButtonDisabled2: false
+          };
+        }
+      };
+      Vue.createApp(inter).mount(".attribute-inter");
+    </script>
+  </body>
+</html>

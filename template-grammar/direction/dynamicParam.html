@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div class="dynamicParam">
+      <div v-bind:[name]="dynamicId"></div>
+      <div v-bind:[name1]="dynamicId"></div>
+      <div v-bind:[name2]="dynamicId"></div>
+    </div>
+
+    <script>
+      const inter = {
+        data() {
+          return {
+            dynamicId: 'name',
+            name: 'class',
+            name1: 'id',
+            name2: null
+          };
+        }
+      };
+      Vue.createApp(inter).mount(".dynamicParam");
+    </script>
+  </body>
+</html>
